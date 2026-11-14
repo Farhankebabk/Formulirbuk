@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3ec">
+  <title>Formulir Pendaftaran Siswa Baru — SMA Negeri 19 Palembang</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="site-header">
+      <img class="school-logo" src="assets/logo-sman19-palembang.png" alt="Lambang SMA Negeri 19 Palembang">
+      <div class="school-heading">
+        <p class="eyebrow">Penerimaan Peserta Didik Baru</p>
+        <h1>Formulir Pendaftaran Siswa Baru</h1>
+        <p class="school-name">SMA Negeri 19 Palembang</p>
+        <p class="school-year">Tahun Ajaran 2025/2026</p>
+      </div>
+      <div class="header-note">PPDB<br><span>FORM 01</span></div>
+    </header>
+
+    <div class="intro-row">
+      <p>Isi data calon peserta didik dan orang tua/wali dengan benar.</p>
+      <p class="required-note"><span aria-hidden="true">*</span> Wajib diisi</p>
+    </div>
+
+    <form id="registrationForm" novalidate>
+      <section class="form-section" aria-labelledby="student-title">
+        <div class="section-heading">
+          <span class="section-index">A</span>
+          <div><h2 id="student-title">Data Calon Peserta Didik</h2><p>Informasi pribadi calon siswa</p></div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="studentName">Nama lengkap <span>*</span></label>
+            <input id="studentName" name="studentName" type="text" autocomplete="name" placeholder="Masukkan nama lengkap siswa" required>
+          </div>
+          <div class="field">
+            <label for="religion">Agama <span>*</span></label>
+            <select id="religion" name="religion" required>
+              <option value="">Pilih agama</option>
+              <option>Islam</option><option>Kristen</option><option>Katolik</option>
+              <option>Hindu</option><option>Buddha</option><option>Konghucu</option><option>Lainnya</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="studentPhone">No. Handphone/WhatsApp siswa <span>*</span></label>
+            <input id="studentPhone" name="studentPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Contoh: 081234567890" pattern="[0-9+() -]{9,18}" required>
+            <small>Gunakan nomor yang aktif dan dapat dihubungi.</small>
+          </div>
+          <div class="field field-wide">
+            <label for="address">Alamat lengkap (sesuai Kartu Keluarga) <span>*</span></label>
+            <textarea id="address" name="address" rows="3" placeholder="Jalan, RT/RW, kelurahan, kecamatan, kota/kabupaten, dan provinsi" required></textarea>
+          </div>
+          <div class="field">
+            <label for="nisn">NISN <span>*</span></label>
+            <input id="nisn" name="nisn" type="text" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" placeholder="Masukkan 10 digit NISN" required>
+            <small>NISN terdiri dari 10 angka.</small>
+          </div>
+          <div class="field">
+            <label for="birthPlace">Tempat lahir <span>*</span></label>
+            <input id="birthPlace" name="birthPlace" type="text" placeholder="Masukkan tempat lahir" required>
+          </div>
+          <div class="field">
+            <label for="previousSchool">Asal sekolah <span>*</span></label>
+            <input id="previousSchool" name="previousSchool" type="text" placeholder="Masukkan nama sekolah asal" required>
+          </div>
+          <div class="field">
+            <label for="birthDate">Tanggal lahir <span>*</span></label>
+            <input id="birthDate" name="birthDate" type="date" required>
+          </div>
+          <div class="field">
+            <label for="graduationYear">Tahun lulus <span>*</span></label>
+            <input id="graduationYear" name="graduationYear" type="number" min="2000" max="2100" placeholder="Contoh: 2025" required>
+          </div>
+          <fieldset class="field gender-field">
+            <legend>Jenis kelamin <span>*</span></legend>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="gender" value="Laki-laki" required><span>Laki-laki</span></label>
+              <label class="choice"><input type="radio" name="gender" value="Perempuan"><span>Perempuan</span></label>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="guardian-title">
+        <div class="section-heading">
+          <span class="section-index">B</span>
+          <div><h2 id="guardian-title">Data Orang Tua/Wali</h2><p>Kontak keluarga yang dapat dihubungi</p></div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="fatherName">Nama lengkap ayah <span>*</span></label>
+            <input id="fatherName" name="fatherName" type="text" placeholder="Masukkan nama lengkap ayah" required>
+          </div>
+          <div class="field">
+            <label for="fatherPhone">No. Handphone/WhatsApp ayah <span>*</span></label>
+            <input id="fatherPhone" name="fatherPhone" type="tel" inputmode="tel" placeholder="Contoh: 081234567890" pattern="[0-9+() -]{9,18}" required>
+          </div>
+          <div class="field">
+            <label for="motherName">Nama lengkap ibu <span>*</span></label>
+            <input id="motherName" name="motherName" type="text" placeholder="Masukkan nama lengkap ibu" required>
+          </div>
+          <div class="field">
+            <label for="motherPhone">No. Handphone/WhatsApp ibu <span>*</span></label>
+            <input id="motherPhone" name="motherPhone" type="tel" inputmode="tel" placeholder="Contoh: 081234567890" pattern="[0-9+() -]{9,18}" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="route-title">
+        <div class="section-heading">
+          <span class="section-index">C</span>
+          <div><h2 id="route-title">Jalur Pendaftaran</h2><p>Pilih satu jalur sesuai ketentuan pendaftaran</p></div>
+        </div>
+        <fieldset class="route-options">
+          <legend class="visually-hidden">Pilih jalur pendaftaran</legend>
+          <label class="route-option">
+            <input type="radio" name="registrationRoute" value="Jalur Zonasi" required>
+            <span class="route-number">01</span><span class="route-name">Jalur Zonasi</span><span class="route-check" aria-hidden="true">✓</span>
+          </label>
+          <label class="route-option">
+            <input type="radio" name="registrationRoute" value="Jalur Afirmasi">
+            <span class="route-number">02</span><span class="route-name">Jalur Afirmasi</span><span class="route-check" aria-hidden="true">✓</span>
+          </label>
+          <label class="route-option">
+            <input type="radio" name="registrationRoute" value="Jalur Perpindahan Tugas">
+            <span class="route-number">03</span><span class="route-name">Jalur Perpindahan Tugas</span><span class="route-check" aria-hidden="true">✓</span>
+          </label>
+          <label class="route-option">
+            <input type="radio" name="registrationRoute" value="Jalur Prestasi">
+            <span class="route-number">04</span><span class="route-name">Jalur Prestasi</span><span class="route-check" aria-hidden="true">✓</span>
+          </label>
+        </fieldset>
+      </section>
+
+      <div class="form-actions">
+        <p>Pastikan seluruh informasi sudah benar sebelum mengirim.</p>
+        <button class="submit-button" type="submit">Kirim Pendaftaran <span aria-hidden="true">→</span></button>
+      </div>
+      <div id="formMessage" class="form-message" role="status" aria-live="polite" hidden></div>
+    </form>
+
+    <footer class="site-footer">
+      <div class="footer-title"><span class="footer-rule"></span><h2>Informasi Penting</h2></div>
+      <div class="footer-grid">
+        <div class="footer-block"><h3>Kontak sekolah</h3><p>WhatsApp: 0812-3456-7890</p><p>Email: sman19.palembang@sekolah.go.id</p></div>
+        <div class="footer-block"><h3>Media sosial</h3><p>Facebook: SMA Negeri 19 Palembang</p><p>Instagram: @sman19palembang</p></div>
+      </div>
+      <p class="footer-disclaimer">Contoh antarmuka formulir. Hubungkan ke sistem PPDB resmi sebelum digunakan untuk menerima pendaftaran.</p>
+    </footer>
+  </main>
+
+  <dialog id="successDialog" class="success-dialog">
+    <div class="dialog-mark" aria-hidden="true">✓</div>
+    <p class="eyebrow">Pemeriksaan formulir selesai</p>
+    <h2>Data siap ditinjau</h2>
+    <p id="successSummary">Seluruh kolom wajib telah terisi.</p>
+    <div class="dialog-actions">
+      <button type="button" class="secondary-button" id="closeDialog">Tutup</button>
+      <button type="button" class="submit-button" id="downloadData">Unduh data JSON</button>
+    </div>
+  </dialog>
+</body>
+</html>
