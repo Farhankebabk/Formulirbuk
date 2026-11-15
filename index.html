@@ -1,167 +1,302 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f3ec">
-  <title>Formulir Pendaftaran Siswa Baru — SMA Negeri 19 Palembang</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f3ec">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171c17">
+    <meta name="description" content="Prototype formulir Sistem Penerimaan Murid Baru SMA Negeri 19 Palembang.">
+    <title>Formulir SPMB | SMA Negeri 19 Palembang</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="page-shell">
-    <header class="site-header">
-      <img class="school-logo" src="assets/logo-sman19-palembang.png" alt="Lambang SMA Negeri 19 Palembang">
-      <div class="school-heading">
-        <p class="eyebrow">Penerimaan Peserta Didik Baru</p>
-        <h1>Formulir Pendaftaran Siswa Baru</h1>
-        <p class="school-name">SMA Negeri 19 Palembang</p>
-        <p class="school-year">Tahun Ajaran 2025/2026</p>
-      </div>
-      <div class="header-note">PPDB<br><span>FORM 01</span></div>
-    </header>
+    <noscript>
+        <p class="noscript-message">JavaScript harus diaktifkan untuk menggunakan formulir simulasi ini. Data tidak akan dikirim ke sekolah.</p>
+    </noscript>
 
-    <div class="intro-row">
-      <p>Isi data calon peserta didik dan orang tua/wali dengan benar.</p>
-      <p class="required-note"><span aria-hidden="true">*</span> Wajib diisi</p>
-    </div>
+    <div id="scriptLoadNotice" class="noscript-message">Memuat fitur formulir. Jika pesan ini tetap tampil, muat ulang halaman atau aktifkan JavaScript.</div>
 
-    <form id="registrationForm" novalidate>
-      <section class="form-section" aria-labelledby="student-title">
-        <div class="section-heading">
-          <span class="section-index">A</span>
-          <div><h2 id="student-title">Data Calon Peserta Didik</h2><p>Informasi pribadi calon siswa</p></div>
-        </div>
-        <div class="form-grid">
-          <div class="field">
-            <label for="studentName">Nama lengkap <span>*</span></label>
-            <input id="studentName" name="studentName" type="text" autocomplete="name" placeholder="Masukkan nama lengkap siswa" required>
-          </div>
-          <div class="field">
-            <label for="religion">Agama <span>*</span></label>
-            <select id="religion" name="religion" required>
-              <option value="">Pilih agama</option>
-              <option>Islam</option><option>Kristen</option><option>Katolik</option>
-              <option>Hindu</option><option>Buddha</option><option>Konghucu</option><option>Lainnya</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="studentPhone">No. Handphone/WhatsApp siswa <span>*</span></label>
-            <input id="studentPhone" name="studentPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Contoh: 081234567890" pattern="[0-9+() -]{9,18}" required>
-            <small>Gunakan nomor yang aktif dan dapat dihubungi.</small>
-          </div>
-          <div class="field field-wide">
-            <label for="address">Alamat lengkap (sesuai Kartu Keluarga) <span>*</span></label>
-            <textarea id="address" name="address" rows="3" placeholder="Jalan, RT/RW, kelurahan, kecamatan, kota/kabupaten, dan provinsi" required></textarea>
-          </div>
-          <div class="field">
-            <label for="nisn">NISN <span>*</span></label>
-            <input id="nisn" name="nisn" type="text" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" placeholder="Masukkan 10 digit NISN" required>
-            <small>NISN terdiri dari 10 angka.</small>
-          </div>
-          <div class="field">
-            <label for="birthPlace">Tempat lahir <span>*</span></label>
-            <input id="birthPlace" name="birthPlace" type="text" placeholder="Masukkan tempat lahir" required>
-          </div>
-          <div class="field">
-            <label for="previousSchool">Asal sekolah <span>*</span></label>
-            <input id="previousSchool" name="previousSchool" type="text" placeholder="Masukkan nama sekolah asal" required>
-          </div>
-          <div class="field">
-            <label for="birthDate">Tanggal lahir <span>*</span></label>
-            <input id="birthDate" name="birthDate" type="date" required>
-          </div>
-          <div class="field">
-            <label for="graduationYear">Tahun lulus <span>*</span></label>
-            <input id="graduationYear" name="graduationYear" type="number" min="2000" max="2100" placeholder="Contoh: 2025" required>
-          </div>
-          <fieldset class="field gender-field">
-            <legend>Jenis kelamin <span>*</span></legend>
-            <div class="choice-row">
-              <label class="choice"><input type="radio" name="gender" value="Laki-laki" required><span>Laki-laki</span></label>
-              <label class="choice"><input type="radio" name="gender" value="Perempuan"><span>Perempuan</span></label>
+    <main class="page-shell">
+        <header class="site-header">
+            <img
+                class="school-logo"
+                src="assets/logo-sman19-palembang.png"
+                alt="Lambang SMA Negeri 19 Palembang"
+                width="579"
+                height="431"
+            >
+
+            <div class="school-heading">
+                <h1>Formulir Pendaftaran Murid Baru</h1>
+                <p class="school-name">SMA Negeri 19 Palembang</p>
+                <p class="school-period">Periode mengikuti pengumuman resmi panitia SPMB.</p>
             </div>
-          </fieldset>
+        </header>
+
+        <section class="prototype-notice" aria-label="Pemberitahuan prototype">
+            <strong>Prototype simulasi.</strong>
+            <span>Data dan dokumen hanya diperiksa di browser ini. Tidak ada pendaftaran yang dikirim atau disimpan oleh sekolah. Gunakan data contoh saat pengujian.</span>
+        </section>
+
+        <div class="intro-row">
+            <p>Isi data calon murid dan orang tua/wali dengan teliti.</p>
+            <p class="required-note"><span aria-hidden="true">*</span> Wajib diisi</p>
         </div>
-      </section>
 
-      <section class="form-section" aria-labelledby="guardian-title">
-        <div class="section-heading">
-          <span class="section-index">B</span>
-          <div><h2 id="guardian-title">Data Orang Tua/Wali</h2><p>Kontak keluarga yang dapat dihubungi</p></div>
+        <form id="registrationForm" method="post" novalidate autocomplete="off" hidden>
+            <section class="form-section" aria-labelledby="student-title">
+                <div class="section-heading">
+                    <span class="section-index" aria-hidden="true">A</span>
+                    <div>
+                        <h2 id="student-title">Data Calon Murid</h2>
+                        <p>Informasi pribadi calon peserta didik.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="studentName">Nama lengkap <span>*</span></label>
+                        <input id="studentName" name="studentName" type="text" placeholder="Nama sesuai dokumen resmi" required aria-describedby="studentName-error">
+                        <small class="field-error" id="studentName-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="nisn">NISN <span>*</span></label>
+                        <input id="nisn" name="nisn" type="text" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" placeholder="10 digit angka" required aria-describedby="nisn-hint nisn-error">
+                        <small id="nisn-hint" class="field-hint">NISN terdiri dari 10 angka.</small>
+                        <small class="field-error" id="nisn-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="birthPlace">Tempat lahir <span>*</span></label>
+                        <input id="birthPlace" name="birthPlace" type="text" placeholder="Kota atau kabupaten" required aria-describedby="birthPlace-error">
+                        <small class="field-error" id="birthPlace-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="birthDate">Tanggal lahir <span>*</span></label>
+                        <input id="birthDate" name="birthDate" type="date" required aria-describedby="birthDate-error">
+                        <small class="field-error" id="birthDate-error" hidden></small>
+                    </div>
+
+                    <fieldset class="field choice-field gender-field" aria-describedby="gender-error">
+                        <legend>Jenis kelamin <span>*</span></legend>
+                        <div class="choice-row">
+                            <label class="choice">
+                                <input type="radio" name="gender" value="Laki-laki" required>
+                                <span>Laki-laki</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="gender" value="Perempuan">
+                                <span>Perempuan</span>
+                            </label>
+                        </div>
+                        <small class="field-error" id="gender-error" hidden></small>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="religion">Agama <span>*</span></label>
+                        <select id="religion" name="religion" required aria-describedby="religion-error">
+                            <option value="">Pilih agama</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                        <small class="field-error" id="religion-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="studentPhone">Nomor HP/WhatsApp siswa <span>*</span></label>
+                        <input id="studentPhone" name="studentPhone" type="tel" inputmode="tel" placeholder="081234567890 atau +62 812-3456-7890" pattern="(\+62|0)[0-9\- ]{8,15}" required aria-describedby="studentPhone-hint studentPhone-error">
+                        <small id="studentPhone-hint" class="field-hint">Masukkan nomor Indonesia tanpa huruf.</small>
+                        <small class="field-error" id="studentPhone-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="previousSchool">Asal sekolah <span>*</span></label>
+                        <input id="previousSchool" name="previousSchool" type="text" placeholder="Nama sekolah asal" required aria-describedby="previousSchool-error">
+                        <small class="field-error" id="previousSchool-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="graduationYear">Tahun lulus <span>*</span></label>
+                        <input id="graduationYear" name="graduationYear" type="number" inputmode="numeric" placeholder="Contoh: 2026" required aria-describedby="graduationYear-hint graduationYear-error">
+                        <small id="graduationYear-hint" class="field-hint">Sesuaikan dengan tahun kelulusan.</small>
+                        <small class="field-error" id="graduationYear-error" hidden></small>
+                    </div>
+
+                    <div class="field field-wide">
+                        <label for="address">Alamat lengkap sesuai Kartu Keluarga <span>*</span></label>
+                        <textarea id="address" name="address" rows="3" placeholder="Jalan, RT/RW, kelurahan, kecamatan, kota/kabupaten, dan provinsi" required aria-describedby="address-error"></textarea>
+                        <small class="field-error" id="address-error" hidden></small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section" aria-labelledby="guardian-title">
+                <div class="section-heading">
+                    <span class="section-index" aria-hidden="true">B</span>
+                    <div>
+                        <h2 id="guardian-title">Data Orang Tua/Wali</h2>
+                        <p>Informasi keluarga yang dapat dihubungi.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="fatherName">Nama lengkap ayah <span>*</span></label>
+                        <input id="fatherName" name="fatherName" type="text" placeholder="Nama lengkap ayah" required aria-describedby="fatherName-error">
+                        <small class="field-error" id="fatherName-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="fatherPhone">Nomor HP/WhatsApp ayah <span>*</span></label>
+                        <input id="fatherPhone" name="fatherPhone" type="tel" inputmode="tel" placeholder="Contoh: 081234567890" pattern="(\+62|0)[0-9\- ]{8,15}" required aria-describedby="fatherPhone-error">
+                        <small class="field-error" id="fatherPhone-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="motherName">Nama lengkap ibu <span>*</span></label>
+                        <input id="motherName" name="motherName" type="text" placeholder="Nama lengkap ibu" required aria-describedby="motherName-error">
+                        <small class="field-error" id="motherName-error" hidden></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="motherPhone">Nomor HP/WhatsApp ibu <span>*</span></label>
+                        <input id="motherPhone" name="motherPhone" type="tel" inputmode="tel" placeholder="Contoh: 081234567890" pattern="(\+62|0)[0-9\- ]{8,15}" required aria-describedby="motherPhone-error">
+                        <small class="field-error" id="motherPhone-error" hidden></small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section" aria-labelledby="route-title">
+                <div class="section-heading">
+                    <span class="section-index" aria-hidden="true">C</span>
+                    <div>
+                        <h2 id="route-title">Jalur Pendaftaran SPMB</h2>
+                        <p>Pilih satu jalur. Ketentuan akhir mengikuti petunjuk teknis daerah.</p>
+                    </div>
+                </div>
+
+                <fieldset class="route-options" id="routeOptions" aria-describedby="route-error">
+                    <legend class="visually-hidden">Pilih jalur pendaftaran</legend>
+                    <label class="route-option">
+                        <input type="radio" name="registrationRoute" value="Domisili" required>
+                        <span class="route-name">Domisili</span>
+                        <span class="route-check" aria-hidden="true">Terpilih</span>
+                    </label>
+                    <label class="route-option">
+                        <input type="radio" name="registrationRoute" value="Afirmasi">
+                        <span class="route-name">Afirmasi</span>
+                        <span class="route-check" aria-hidden="true">Terpilih</span>
+                    </label>
+                    <label class="route-option">
+                        <input type="radio" name="registrationRoute" value="Prestasi">
+                        <span class="route-name">Prestasi</span>
+                        <span class="route-check" aria-hidden="true">Terpilih</span>
+                    </label>
+                    <label class="route-option">
+                        <input type="radio" name="registrationRoute" value="Mutasi">
+                        <span class="route-name">Mutasi</span>
+                        <span class="route-check" aria-hidden="true">Terpilih</span>
+                    </label>
+                    <small class="field-error route-error" id="route-error" hidden></small>
+                </fieldset>
+
+                <div class="route-guidance" id="routeGuidance" aria-live="polite">
+                    <strong>Informasi dokumen jalur</strong>
+                    <p>Pilih jalur untuk melihat gambaran dokumen yang mungkin diperlukan. Daftar final wajib mengikuti juknis SPMB Provinsi Sumatera Selatan.</p>
+                </div>
+            </section>
+
+            <section class="form-section" aria-labelledby="documents-title">
+                <div class="section-heading">
+                    <span class="section-index" aria-hidden="true">D</span>
+                    <div>
+                        <h2 id="documents-title">Dokumen Pendukung</h2>
+                        <p>Contoh unggahan berkas: JPG, PNG, WebP, atau PDF, maksimal 5 MB per berkas.</p>
+                    </div>
+                </div>
+
+                <div class="document-note">
+                    Dokumen di bawah hanya contoh untuk simulasi antarmuka. Dokumen wajib dan dokumen khusus setiap jalur harus ditetapkan berdasarkan petunjuk teknis resmi.
+                </div>
+
+                <div class="doc-list">
+                    <div class="doc-field" data-label="Kartu Keluarga">
+                        <label for="docFamilyCard">Kartu Keluarga (KK)</label>
+                        <small id="docFamilyCard-hint">Pilih salinan dokumen jika ingin mencoba fitur unggah.</small>
+                        <input id="docFamilyCard" name="docFamilyCard" type="file" accept="image/jpeg,image/png,image/webp,application/pdf" aria-describedby="docFamilyCard-hint docFamilyCard-error">
+                        <small class="field-error" id="docFamilyCard-error" hidden></small>
+                        <div class="doc-result" id="docFamilyCard-result" aria-live="polite"></div>
+                    </div>
+
+                    <div class="doc-field" data-label="Akta Kelahiran">
+                        <label for="docBirthCert">Akta kelahiran</label>
+                        <small id="docBirthCert-hint">Pilih salinan dokumen jika ingin mencoba fitur unggah.</small>
+                        <input id="docBirthCert" name="docBirthCert" type="file" accept="image/jpeg,image/png,image/webp,application/pdf" aria-describedby="docBirthCert-hint docBirthCert-error">
+                        <small class="field-error" id="docBirthCert-error" hidden></small>
+                        <div class="doc-result" id="docBirthCert-result" aria-live="polite"></div>
+                    </div>
+
+                    <div class="doc-field" data-label="Ijazah atau Surat Keterangan Lulus">
+                        <label for="docDiploma">Ijazah atau Surat Keterangan Lulus</label>
+                        <small id="docDiploma-hint">Pilih salinan dokumen jika ingin mencoba fitur unggah.</small>
+                        <input id="docDiploma" name="docDiploma" type="file" accept="image/jpeg,image/png,image/webp,application/pdf" aria-describedby="docDiploma-hint docDiploma-error">
+                        <small class="field-error" id="docDiploma-error" hidden></small>
+                        <div class="doc-result" id="docDiploma-result" aria-live="polite"></div>
+                    </div>
+                </div>
+
+                <p class="doc-note">Berkas hanya diperiksa dan ditampilkan sementara di perangkat ini. Berkas tidak diunggah ke sekolah.</p>
+            </section>
+
+            <div class="form-actions">
+                <p>Periksa kembali data sebelum membuat ringkasan simulasi.</p>
+                <button class="submit-button" type="submit">Periksa data</button>
+            </div>
+
+            <div id="formMessage" class="form-message" role="alert" aria-live="assertive" hidden></div>
+        </form>
+
+        <section class="site-footer" aria-labelledby="info-title">
+            <div class="footer-title">
+                <span class="footer-rule" aria-hidden="true"></span>
+                <h2 id="info-title">Informasi SPMB</h2>
+            </div>
+            <div class="footer-block">
+                <p>Nama jalur, jadwal, kuota, dan dokumen final harus diperiksa melalui petunjuk teknis SPMB Provinsi Sumatera Selatan serta pengumuman resmi sekolah.</p>
+                <a href="https://pusatinformasi.ult.kemendikdasmen.go.id/hc/id/articles/48105439825945-Pertanyaan-sering-ditanya-FAQ-seputar-Sistem-Penerimaan-Murid-Baru-SPMB" target="_blank" rel="noopener noreferrer">Baca FAQ SPMB nasional</a>
+            </div>
+        </section>
+
+        <section id="printReceipt" class="print-receipt" aria-labelledby="receipt-title" hidden>
+            <div class="receipt-header">
+                <img src="assets/logo-sman19-palembang.png" alt="Lambang SMA Negeri 19 Palembang" width="72" height="54">
+                <div>
+                    <h2 id="receipt-title">Ringkasan Simulasi Pendaftaran</h2>
+                    <p>SMA Negeri 19 Palembang</p>
+                </div>
+            </div>
+            <p class="receipt-warning">Dokumen ini hanya ringkasan simulasi, bukan bukti pendaftaran resmi.</p>
+            <dl id="receiptDetails" class="receipt-details"></dl>
+        </section>
+    </main>
+
+    <dialog id="successDialog" class="success-dialog" aria-labelledby="dialog-title" aria-describedby="successSummary">
+        <p class="dialog-kicker">Pemeriksaan lokal selesai</p>
+        <h2 id="dialog-title">Data lolos pemeriksaan browser</h2>
+        <p id="successSummary">Belum ada data yang diperiksa.</p>
+        <p class="dialog-note">Tidak ada data atau dokumen yang dikirim ke sekolah. Ini bukan bukti pendaftaran resmi.</p>
+        <div class="dialog-actions">
+            <button type="button" class="secondary-button" id="closeDialog">Kembali ke formulir</button>
+            <button type="button" class="submit-button" id="printSummary">Cetak ringkasan</button>
         </div>
-        <div class="form-grid">
-          <div class="field">
-            <label for="fatherName">Nama lengkap ayah <span>*</span></label>
-            <input id="fatherName" name="fatherName" type="text" placeholder="Masukkan nama lengkap ayah" required>
-          </div>
-          <div class="field">
-            <label for="fatherPhone">No. Handphone/WhatsApp ayah <span>*</span></label>
-            <input id="fatherPhone" name="fatherPhone" type="tel" inputmode="tel" placeholder="Contoh: 081234567890" pattern="[0-9+() -]{9,18}" required>
-          </div>
-          <div class="field">
-            <label for="motherName">Nama lengkap ibu <span>*</span></label>
-            <input id="motherName" name="motherName" type="text" placeholder="Masukkan nama lengkap ibu" required>
-          </div>
-          <div class="field">
-            <label for="motherPhone">No. Handphone/WhatsApp ibu <span>*</span></label>
-            <input id="motherPhone" name="motherPhone" type="tel" inputmode="tel" placeholder="Contoh: 081234567890" pattern="[0-9+() -]{9,18}" required>
-          </div>
-        </div>
-      </section>
-
-      <section class="form-section" aria-labelledby="route-title">
-        <div class="section-heading">
-          <span class="section-index">C</span>
-          <div><h2 id="route-title">Jalur Pendaftaran</h2><p>Pilih satu jalur sesuai ketentuan pendaftaran</p></div>
-        </div>
-        <fieldset class="route-options">
-          <legend class="visually-hidden">Pilih jalur pendaftaran</legend>
-          <label class="route-option">
-            <input type="radio" name="registrationRoute" value="Jalur Zonasi" required>
-            <span class="route-number">01</span><span class="route-name">Jalur Zonasi</span><span class="route-check" aria-hidden="true">✓</span>
-          </label>
-          <label class="route-option">
-            <input type="radio" name="registrationRoute" value="Jalur Afirmasi">
-            <span class="route-number">02</span><span class="route-name">Jalur Afirmasi</span><span class="route-check" aria-hidden="true">✓</span>
-          </label>
-          <label class="route-option">
-            <input type="radio" name="registrationRoute" value="Jalur Perpindahan Tugas">
-            <span class="route-number">03</span><span class="route-name">Jalur Perpindahan Tugas</span><span class="route-check" aria-hidden="true">✓</span>
-          </label>
-          <label class="route-option">
-            <input type="radio" name="registrationRoute" value="Jalur Prestasi">
-            <span class="route-number">04</span><span class="route-name">Jalur Prestasi</span><span class="route-check" aria-hidden="true">✓</span>
-          </label>
-        </fieldset>
-      </section>
-
-      <div class="form-actions">
-        <p>Pastikan seluruh informasi sudah benar sebelum mengirim.</p>
-        <button class="submit-button" type="submit">Kirim Pendaftaran <span aria-hidden="true">→</span></button>
-      </div>
-      <div id="formMessage" class="form-message" role="status" aria-live="polite" hidden></div>
-    </form>
-
-    <footer class="site-footer">
-      <div class="footer-title"><span class="footer-rule"></span><h2>Informasi Penting</h2></div>
-      <div class="footer-grid">
-        <div class="footer-block"><h3>Kontak sekolah</h3><p>WhatsApp: 0812-3456-7890</p><p>Email: sman19.palembang@sekolah.go.id</p></div>
-        <div class="footer-block"><h3>Media sosial</h3><p>Facebook: SMA Negeri 19 Palembang</p><p>Instagram: @sman19palembang</p></div>
-      </div>
-      <p class="footer-disclaimer">Contoh antarmuka formulir. Hubungkan ke sistem PPDB resmi sebelum digunakan untuk menerima pendaftaran.</p>
-    </footer>
-  </main>
-
-  <dialog id="successDialog" class="success-dialog">
-    <div class="dialog-mark" aria-hidden="true">✓</div>
-    <p class="eyebrow">Pemeriksaan formulir selesai</p>
-    <h2>Data siap ditinjau</h2>
-    <p id="successSummary">Seluruh kolom wajib telah terisi.</p>
-    <div class="dialog-actions">
-      <button type="button" class="secondary-button" id="closeDialog">Tutup</button>
-      <button type="button" class="submit-button" id="downloadData">Unduh data JSON</button>
-    </div>
-  </dialog>
+    </dialog>
 </body>
 </html>
